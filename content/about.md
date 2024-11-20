@@ -11,5 +11,5 @@ social:
 # twitter: "https://www.twitter.com"
 # instagram: "https://www.instagram.com"
   tiktok: "https://tiktok.com/@sentientfx"
-  email: "mailto:ceyloncypher@gmail.com"
+  email: "ceyloncypher@gmail.com"
 ---
