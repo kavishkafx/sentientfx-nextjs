@@ -1,7 +1,7 @@
 ---
 title: Sentientfx
 image: /images/authors/john-doe.jpg
-description: this is meta description
+description: sentientfx auther page
 social:
   # facebook: https://www.facebook.com/
   # twitter: https://www.twitter.com/

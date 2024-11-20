@@ -1,5 +1,5 @@
 ---
-title: "I’m John Doe, A content writer based in LDN, currently at Bookworm"
+title: "It's sentientfx, A content creator based in Sri Lanka,Currently at CMB"
 meta_title: "About"
 image: "/images/author.jpg"
 layout: "about"
