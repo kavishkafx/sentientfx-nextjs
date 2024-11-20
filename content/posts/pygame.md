@@ -115,6 +115,6 @@ After running the script, you'll get a uniquely named video file like `output_vi
 ### 🌟 Bonus Challenge
 Modify the code! Change gravity, add multiple balls, or create wild color transitions. Make this animation YOUR signature style!
 
-**Happy coding, TikTok creators! 🐍🎥**
+**Happy coding! 🐍🎥**
 
 *Disclaimer: Results may cause serious scrolling addiction among your followers! 😉*

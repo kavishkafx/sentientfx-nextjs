@@ -6,7 +6,7 @@
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "34",
-    "logo_text": "Bookworm Light"
+    "logo_text": "Sentient FX"
   },
 
   "settings": {
@@ -22,7 +22,7 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "sentientfx",
     "meta_image": "/images/og-image.png",
     "meta_description": "Next Boilerplate"
   }
