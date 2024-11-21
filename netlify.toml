@@ -1,13 +1,7 @@
 [build]
   command = "next build"
   publish = "out"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
+  
 [functions]
   node_bundler = "esbuild"
   included_files = ["content/**"]
