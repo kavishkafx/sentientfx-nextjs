@@ -1,5 +1,6 @@
-// next-sitemap.config.js
+// next-sitemap.js
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'http://localhost:3000',
-  generateRobotsTxt: true,
-};
+  siteUrl: 'https://sentientfx.online', // Replace with your domain
+  generateRobotsTxt: true, // (Optional) Generates robots.txt file
+  sitemapSize: 7000, // (Optional) Number of URLs per sitemap file
+}
