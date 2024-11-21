@@ -14,10 +14,7 @@ const Contact = ({ data }) => {
           className="contact-form"
           method="POST"
           action={contact_form_action}
-          data-netlify="true"
-
         >
-          <input type="hidden" name="form-name" value="contact" />
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
