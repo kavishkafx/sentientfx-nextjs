@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-layout: "post"
+layout: "postsingle"
 draft: false
 ---
 
