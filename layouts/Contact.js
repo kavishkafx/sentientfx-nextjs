@@ -1,4 +1,4 @@
-import ContactForm from '../components/ContactForm';
+import ContactForm from '/layouts/components/ContactForm';
 
 const About = () => {
   return (
