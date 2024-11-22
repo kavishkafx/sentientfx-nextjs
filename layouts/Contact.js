@@ -11,53 +11,50 @@ const Contact = ({ data }) => {
       <div className="container max-w-[700px]">
         {markdownify(title, "h1", "h2 mb-8 text-center")}
         <form
-          name="contact"
+          className="contact-form"
           method="POST"
           action={contact_form_action}
-          data-netlify="true"
-          className="contact-form"
         >
-          <input type="hidden" name="form-name" value="contact" />
-
-          <div className="form-group mb-4">
-            <label className="block text-lg font-semibold mb-2">
-              Your Name:
-              <input
-                type="text"
-                name="name"
-                required
-                className="form-input w-full"
-              />
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="name">
+              Name
             </label>
+            <input
+              className="form-input w-full"
+              name="name"
+              type="text"
+              required
+            />
           </div>
-
-          <div className="form-group mb-4">
-            <label className="block text-lg font-semibold mb-2">
-              Your Email:
-              <input
-                type="email"
-                name="email"
-                required
-                className="form-input w-full"
-              />
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="email">
+              Email
             </label>
+            <input
+              className="form-input w-full"
+              name="email"
+              type="email"
+              required
+            />
           </div>
-
-          <div className="form-group mb-6">
-            <label className="block text-lg font-semibold mb-2">
-              Message:
-              <textarea
-                name="message"
-                required
-                rows="7"
-                className="form-textarea w-full"
-              />
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="subject">
+              Subject
             </label>
+            <input
+              className="form-input w-full"
+              name="subject"
+              type="text"
+              required
+            />
           </div>
-
-          <div>
-            <button type="submit" className="btn btn-primary">Send</button>
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="message">
+              Message
+            </label>
+            <textarea className="form-textarea w-full" rows="7" />
           </div>
+          <button className="btn btn-outline-primary">Submit Now</button>
         </form>
       </div>
     </section>
