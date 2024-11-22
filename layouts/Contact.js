@@ -15,10 +15,10 @@ const Contact = ({ data }) => {
           className="contact-form"
           method="POST"
           data-netlify="true"
-          name="contact"
+          name="contact-form"
           netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contact-form" /> {/* Changed to match form name */}
           <p className="hidden">
             <label>
               Don't fill this out: <input name="bot-field" />
@@ -61,11 +61,11 @@ const Contact = ({ data }) => {
             <label className="mb-2 block" htmlFor="message">
               Message
             </label>
-            <textarea 
-              className="form-textarea w-full" 
-              rows="7" 
-              name="message" 
-              required 
+            <textarea
+              className="form-textarea w-full"
+              rows="7"
+              name="message"
+              required
             />
           </div>
           <button type="submit" className="btn btn-outline-primary">
