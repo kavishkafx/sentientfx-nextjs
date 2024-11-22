@@ -1,5 +1,6 @@
+"use client";
+
 import { useState } from 'react';
-import config from "@config/config";
 import { markdownify } from "@lib/utils/textConverter";
 
 const encode = (data) => {
@@ -8,7 +9,7 @@ const encode = (data) => {
     .join("&");
 }
 
-const Contact = ({ data }) => {
+export default function Contact({ data }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -114,6 +115,4 @@ const Contact = ({ data }) => {
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
