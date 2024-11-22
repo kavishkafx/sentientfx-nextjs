@@ -6,8 +6,7 @@ import { useState } from "react";
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
-  const { title } = frontmatter;
-  const { contact_form_action } = config.params;
+  const { title, description } = frontmatter;
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -34,6 +33,11 @@ const Contact = ({ data }) => {
     <section className="section">
       <div className="container max-w-[700px]">
         {markdownify(title, "h1", "h2 mb-8 text-center")}
+        {description && (
+          <div className="content text-center mb-8">
+            {markdownify(description)}
+          </div>
+        )}
         
         {submitted ? (
           <div className="text-center p-6">
