@@ -1,35 +1,62 @@
-"use client"; // Indicate that this is a Client Component
+import config from "@config/config";
+import { markdownify } from "@lib/utils/textConverter";
 
-const Contact = () => {
+const Contact = ({ data }) => {
+  const { frontmatter } = data;
+  const { title } = frontmatter;
+  const { contact_form_action } = config.params;
+
   return (
     <section className="section">
       <div className="container max-w-[700px]">
-        <h2 className="mb-8 text-center">Contact Us</h2>
-
-        <form name="contact" method="POST" data-netlify="true">
-          <p>
-            <label>Your Name: <input type="text" name="name" required /></label>
-          </p>
-          <p>
-            <label>Your Email: <input type="email" name="email" required /></label>
-          </p>
-          <p>
-            <label>Your Role:
-              <select name="role[]" multiple>
-                <option value="leader">Leader</option>
-                <option value="follower">Follower</option>
-              </select>
+        {markdownify(title, "h1", "h2 mb-8 text-center")}
+        <form
+          className="contact-form"
+          method="POST"
+          action={contact_form_action}
+          netlify
+        >
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="name">
+              Name
             </label>
-          </p>
-          <p>
-            <label>Message: <textarea name="message" required></textarea></label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
+            <input
+              className="form-input w-full"
+              name="name"
+              type="text"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="form-input w-full"
+              name="email"
+              type="email"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="subject">
+              Subject
+            </label>
+            <input
+              className="form-input w-full"
+              name="subject"
+              type="text"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="mb-2 block" htmlFor="message">
+              Message
+            </label>
+            <textarea className="form-textarea w-full" rows="7" />
+          </div>
+          <button className="btn btn-outline-primary">Submit Now</button>
         </form>
-
-        {/* Optional: Add a success/error message display here if needed */}
       </div>
     </section>
   );
