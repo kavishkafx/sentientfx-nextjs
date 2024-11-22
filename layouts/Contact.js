@@ -14,6 +14,7 @@ const Contact = ({ data }) => {
           className="contact-form"
           method="POST"
           action={contact_form_action}
+          data-netlify="true" // Add this line for Netlify form handling
         >
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
@@ -52,9 +53,14 @@ const Contact = ({ data }) => {
             <label className="mb-2 block" htmlFor="message">
               Message
             </label>
-            <textarea className="form-textarea w-full" rows="7" />
+            <textarea 
+              className="form-textarea w-full" 
+              name="message" // Ensure you include the name attribute for the textarea
+              rows="7" 
+              required // Add this to make it a required field
+            />
           </div>
-          <button className="btn btn-outline-primary">Submit Now</button>
+          <button type="submit" className="btn btn-outline-primary">Submit Now</button>
         </form>
       </div>
     </section>
