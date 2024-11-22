@@ -1,51 +1,26 @@
-<main style="padding: 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
-    <header style="margin-bottom: 20px;">
-        <h1>Contact Us</h1>
-    </header>
-    <p>If you have any questions, feel free to reach out using the form below.</p>
+<main style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+    <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; max-width: 500px;">
+        <h1 style="font-size: 24px; margin-bottom: 10px;">Contact Us</h1>
+        <p style="font-size: 14px; margin-bottom: 20px;">If you have any questions, feel free to reach out using the form below.</p>
 
-    <!-- Contact Form -->
-    <form name="contact" method="POST" data-netlify="true" id="contact-form" style="max-width: 600px; margin: 20px auto; padding: 20px; background: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <div style="margin-bottom: 15px;">
-            <label for="name" style="display: block; font-size: 16px; color: #333; margin-bottom: 5px;">Your Name:</label>
-            <input type="text" name="name" id="name" required style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; color: #333;" />
-        </div>
-        <div style="margin-bottom: 15px;">
-            <label for="email" style="display: block; font-size: 16px; color: #333; margin-bottom: 5px;">Your Email:</label>
-            <input type="email" name="email" id="email" required style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; color: #333;" />
-        </div>
-        <div style="margin-bottom: 15px;">
-            <label for="message" style="display: block; font-size: 16px; color: #333; margin-bottom: 5px;">Message:</label>
-            <textarea name="message" id="message" required style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; color: #333;"></textarea>
-        </div>
-        <div style="margin-bottom: 15px;">
-            <button type="submit" style="border-radius: 8px; padding: 10px 20px; font-weight: bold; background-color: #4CAF50; color: white; border: none;">Send</button>
-        </div>
-    </form>
-    <div id="success-message" style="display:none; margin-top:20px; padding:10px; border-radius:5px; background:#f9f9f9;">
-        <p>Your message has been sent! Thank you for reaching out.</p>
+        <!-- Contact Form -->
+        <form name="contact" method="POST" data-netlify="true">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; font-size: 14px; margin-bottom: 5px;">Your Name:</label>
+                <input type="text" name="name" id="name" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; font-size: 14px; margin-bottom: 5px;">Your Email:</label>
+                <input type="email" name="email" id="email" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px;" />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="message" style="display: block; font-size: 14px; margin-bottom: 5px;">Message:</label>
+                <textarea name="message" id="message" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;"></textarea>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="/" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; justify-content: center;">Home</a>
+                <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">Send</button>
+            </div>
+        </form>
     </div>
-    <script>
-        const form = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const formData = new FormData(form);
-
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString(),
-            })
-            .then(() => {
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-                setTimeout(() => {
-                    window.location.href = "https://sentientfx.online";
-                }, 750); // Redirect after 3/4 seconds
-            })
-            .catch((error) => alert('Error: ' + error));
-        });
-    </script>
 </main>
