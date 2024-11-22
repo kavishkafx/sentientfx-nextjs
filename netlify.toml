@@ -1,3 +1,6 @@
 [functions]
 node_bundler = "esbuild"
 included_files = ["content/**"]
+
+[[plugins]]
+package = "@netlify/plugin-forms"
