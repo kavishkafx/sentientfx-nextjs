@@ -4,35 +4,32 @@ import { useState } from 'react';
 import { markdownify } from "@lib/utils/textConverter";
 
 export default function Contact({ data }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'contact',
-        ...formData
-      }).toString()
-    })
-    .then(() => {
-      alert('Form submitted successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    })
-    .catch(error => alert(error));
-  };
+    const formData = new FormData(form);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...Object.fromEntries(formData)
+        }).toString()
+      });
+
+      if (response.ok) {
+        setStatus('Thanks for your submission!');
+        form.reset();
+      } else {
+        setStatus('There was an error. Please try again.');
+      }
+    } catch (error) {
+      setStatus('There was an error. Please try again.');
+    }
   };
 
   const { frontmatter } = data;
@@ -45,6 +42,7 @@ export default function Contact({ data }) {
         <form 
           name="contact"
           method="POST"
+          data-netlify="true"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -56,8 +54,6 @@ export default function Contact({ data }) {
               className="form-input w-full"
               name="name"
               type="text"
-              value={formData.name}
-              onChange={handleChange}
               required
             />
           </div>
@@ -69,8 +65,6 @@ export default function Contact({ data }) {
               className="form-input w-full"
               name="email"
               type="email"
-              value={formData.email}
-              onChange={handleChange}
               required
             />
           </div>
@@ -82,8 +76,6 @@ export default function Contact({ data }) {
               className="form-input w-full"
               name="subject"
               type="text"
-              value={formData.subject}
-              onChange={handleChange}
               required
             />
           </div>
@@ -95,11 +87,11 @@ export default function Contact({ data }) {
               className="form-textarea w-full" 
               name="message"
               rows="7"
-              value={formData.message}
-              onChange={handleChange}
               required 
             />
           </div>
+          
+          {status && <div className="mb-4 text-green-600">{status}</div>}
           
           <button type="submit" className="btn btn-outline-primary">
             Submit Now
