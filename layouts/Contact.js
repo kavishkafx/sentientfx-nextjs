@@ -19,44 +19,44 @@ const Contact = ({ data }) => {
         >
           <input type="hidden" name="form-name" value="contact" />
 
-          <div className="form-group mb-4">
-            <label className="block text-lg font-semibold mb-2">
+          <div className="mb-4">
+            <label className="block text-lg font-semibold mb-2" htmlFor="name">
               Your Name:
               <input
                 type="text"
                 name="name"
                 required
-                className="form-input w-full"
+                className="form-input w-full rounded-lg border-border text-text focus:border-primary focus:ring-transparent"
               />
             </label>
           </div>
 
-          <div className="form-group mb-4">
-            <label className="block text-lg font-semibold mb-2">
+          <div className="mb-4">
+            <label className="block text-lg font-semibold mb-2" htmlFor="email">
               Your Email:
               <input
                 type="email"
                 name="email"
                 required
-                className="form-input w-full"
+                className="form-input w-full rounded-lg border-border text-text focus:border-primary focus:ring-transparent"
               />
             </label>
           </div>
 
-          <div className="form-group mb-6">
-            <label className="block text-lg font-semibold mb-2">
+          <div className="mb-6">
+            <label className="block text-lg font-semibold mb-2" htmlFor="message">
               Message:
               <textarea
                 name="message"
                 required
                 rows="7"
-                className="form-textarea w-full"
-              />
+                className="form-textarea w-full rounded-lg border-border text-text focus:border-primary focus:ring-transparent"
+              ></textarea>
             </label>
           </div>
 
           <div>
-            <button type="submit" className="btn btn-primary">Send</button>
+            <button type="submit" className="btn btn-outline-primary">Send</button>
           </div>
         </form>
       </div>
