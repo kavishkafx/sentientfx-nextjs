@@ -14,7 +14,6 @@ const Contact = ({ data }) => {
           className="contact-form"
           method="POST"
           name="contact-form"
-          data-netlify="true" // Netlify form handling
         >
           <input type="hidden" name="form-name" value="contact-form" />
           <div className="mb-6">
