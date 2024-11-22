@@ -7,14 +7,16 @@ const Contact = ({ data }) => {
       <div className="container max-w-[700px]">
         {markdownify(title, "h1", "h2 mb-8 text-center")}
         <form 
-          name="contact" 
-          method="POST" 
-          netlify
+          name="contact"
+          action="/contact"
+          method="POST"
+          data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">Name</label>
             <input
+              id="name"
               className="form-input w-full"
               name="name"
               type="text"
@@ -24,6 +26,7 @@ const Contact = ({ data }) => {
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="email">Email</label>
             <input
+              id="email"
               className="form-input w-full"
               name="email"
               type="email"
@@ -33,6 +36,7 @@ const Contact = ({ data }) => {
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="subject">Subject</label>
             <input
+              id="subject"
               className="form-input w-full"
               name="subject"
               type="text"
@@ -42,6 +46,7 @@ const Contact = ({ data }) => {
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="message">Message</label>
             <textarea 
+              id="message"
               className="form-textarea w-full" 
               name="message" 
               rows="7" 
