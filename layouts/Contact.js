@@ -1,11 +1,10 @@
-"use client";
-
 import config from "@config/config";
 import { markdownify } from "@lib/utils/textConverter";
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title } = frontmatter;
+  const { contact_form_action } = config.params;
 
   return (
     <section className="section">
@@ -14,21 +13,8 @@ const Contact = ({ data }) => {
         <form
           className="contact-form"
           method="POST"
-          data-netlify="true"
-          name="contact-form"
-          netlify-honeypot="bot-field"
+          action={contact_form_action}
         >
-          {/* Hidden field to tell Netlify which form to handle */}
-          <input type="hidden" name="form-name" value="contact-form" />
-
-          {/* Honeypot field to prevent bot submissions */}
-          <p className="hidden">
-            <label>
-              Don't fill this out: <input name="bot-field" />
-            </label>
-          </p>
-
-          {/* Form Fields */}
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
@@ -66,18 +52,9 @@ const Contact = ({ data }) => {
             <label className="mb-2 block" htmlFor="message">
               Message
             </label>
-            <textarea
-              className="form-textarea w-full"
-              rows="7"
-              name="message"
-              required
-            />
+            <textarea className="form-textarea w-full" rows="7" />
           </div>
-
-          {/* Submit Button */}
-          <button type="submit" className="btn btn-outline-primary">
-            Submit Now
-          </button>
+          <button className="btn btn-outline-primary">Submit Now</button>
         </form>
       </div>
     </section>
