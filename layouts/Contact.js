@@ -12,12 +12,18 @@ const Contact = ({ data }) => {
         {markdownify(title, "h1", "h2 mb-8 text-center")}
         <form
           className="contact-form"
-          method="POST"
-          action={contact_form_action}
           name="contact"
+          method="POST"
+          netlify-honeypot="bot-field"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden">
+            <label>
+              Don't fill this out if you're human: 
+              <input name="bot-field" />
+            </label>
+          </p>
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
