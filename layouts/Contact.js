@@ -3,12 +3,6 @@
 import { useState } from 'react';
 import { markdownify } from "@lib/utils/textConverter";
 
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
 export default function Contact({ data }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,28 +11,28 @@ export default function Contact({ data }) {
     message: ''
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'form-name': 'contact',
         ...formData
-      })
+      }).toString()
     })
     .then(() => {
-      alert("Form submitted successfully!");
+      alert('Form submitted successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     })
     .catch(error => alert(error));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const { frontmatter } = data;
@@ -51,7 +45,6 @@ export default function Contact({ data }) {
         <form 
           name="contact"
           method="POST"
-          data-netlify="true"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
