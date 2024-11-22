@@ -1,14 +1,8 @@
 "use client"; // Indicate that this is a Client Component
 
-import config from "@config/config";
-import { markdownify } from "@lib/utils/textConverter";
 import { useState } from "react";
 
-const Contact = ({ data }) => {
-  const { frontmatter } = data;
-  const { title } = frontmatter;
-  const { contact_form_action } = config.params;
-
+const Contact = () => {
   const [status, setStatus] = useState(null);
 
   const handleSubmit = async (event) => {
@@ -16,7 +10,7 @@ const Contact = ({ data }) => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch(contact_form_action, {
+      const response = await fetch("/", {
         method: "POST",
         body: formData,
       });
@@ -35,7 +29,7 @@ const Contact = ({ data }) => {
   return (
     <section className="section">
       <div className="container max-w-[700px]">
-        {markdownify(title, "h1", "h2 mb-8 text-center")}
+        <h2 className="mb-8 text-center">Contact Us</h2>
         
         {status && (
           <div className={`mb-4 p-4 rounded ${status.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
