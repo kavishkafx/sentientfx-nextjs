@@ -2,7 +2,7 @@
 title: "How to create a bouncing ball with Python"
 description: "Bouncing Ball In A circle | python automation"
 date: 2024-11-20
-image: "/images/posts/pygame/pygame.jpg"
+image: "/images/posts/pygame/pygame.png"
 categories: ["programming","social media"]
 authors: ["sentientfx"]
 tags: ["python", "ball bouncing tiktok", "pygame" , "moviepy"]
