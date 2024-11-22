@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-layout: "default"  # Assuming "default" is the main layout used across your site
+layout: "contact"
 draft: false
 ---
 
