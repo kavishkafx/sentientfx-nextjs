@@ -9,8 +9,7 @@ const Contact = ({ data }) => {
         <form 
           name="contact" 
           method="POST" 
-          action="/"
-          data-netlify="true"
+          netlify
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="mb-6">
