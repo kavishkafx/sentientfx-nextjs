@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-layout: "contact"
+layout: "default"  # Assuming "default" is the main layout used across your site
 draft: false
 ---
 
@@ -9,24 +9,24 @@ draft: false
 <form name="contact" method="POST" data-netlify="true">
   <input type="hidden" name="form-name" value="contact" />
 
-  <p>
+  <div>
     <label>Your Name: <input type="text" name="name" required /></label>
-  </p>
-  <p>
+  </div>
+  <div>
     <label>Your Email: <input type="email" name="email" required /></label>
-  </p>
-  <p>
-    <label>Your Role: 
+  </div>
+  <div>
+    <label>Your Role:
       <select name="role[]" multiple>
         <option value="leader">Leader</option>
         <option value="follower">Follower</option>
       </select>
     </label>
-  </p>
-  <p>
+  </div>
+  <div>
     <label>Message: <textarea name="message" required></textarea></label>
-  </p>
-  <p>
+  </div>
+  <div>
     <button type="submit">Send</button>
-  </p>
+  </div>
 </form>
