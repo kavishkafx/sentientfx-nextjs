@@ -18,12 +18,17 @@ const Contact = ({ data }) => {
           name="contact-form"
           netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact-form" /> {/* Changed to match form name */}
+          {/* Hidden field to tell Netlify which form to handle */}
+          <input type="hidden" name="form-name" value="contact-form" />
+
+          {/* Honeypot field to prevent bot submissions */}
           <p className="hidden">
             <label>
               Don't fill this out: <input name="bot-field" />
             </label>
           </p>
+
+          {/* Form Fields */}
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
@@ -68,6 +73,8 @@ const Contact = ({ data }) => {
               required
             />
           </div>
+
+          {/* Submit Button */}
           <button type="submit" className="btn btn-outline-primary">
             Submit Now
           </button>
