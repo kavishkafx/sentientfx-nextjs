@@ -1,4 +1,4 @@
-"use client"; 
+"use client"; // Indicate that this is a Client Component
 
 import config from "@config/config";
 import { markdownify } from "@lib/utils/textConverter";
@@ -9,7 +9,6 @@ const Contact = ({ data }) => {
   const { title } = frontmatter;
   const { contact_form_action } = config.params;
 
-  // State for handling form submission status
   const [status, setStatus] = useState(null);
 
   const handleSubmit = async (event) => {
@@ -44,58 +43,27 @@ const Contact = ({ data }) => {
           </div>
         )}
 
-        <form
-          name="contact"
-          method="POST"
-          action={contact_form_action}
-          data-netlify="true"
-          className="contact-form"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="form-name" value="contact" />
-
-          <div className="form-group mb-4">
-            <label htmlFor="name" className="block text-lg font-semibold mb-2">
-              Your Name:
+        <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+          <p>
+            <label>Your Name: <input type="text" name="name" required /></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email" required /></label>
+          </p>
+          <p>
+            <label>Your Role:
+              <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+              </select>
             </label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              required
-              className="form-input w-full"
-            />
-          </div>
-
-          <div className="form-group mb-4">
-            <label htmlFor="email" className="block text-lg font-semibold mb-2">
-              Your Email:
-            </label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              required
-              className="form-input w-full"
-            />
-          </div>
-
-          <div className="form-group mb-6">
-            <label htmlFor="message" className="block text-lg font-semibold mb-2">
-              Message:
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="7"
-              className="form-textarea w-full"
-            />
-          </div>
-
-          <div>
-            <button type="submit" className="btn btn-primary">Send</button>
-          </div>
+          </p>
+          <p>
+            <label>Message: <textarea name="message" required></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
         </form>
       </div>
     </section>
