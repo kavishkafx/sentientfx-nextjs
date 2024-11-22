@@ -4,6 +4,7 @@ import { markdownify } from "@lib/utils/textConverter";
 const Contact = ({ data }) => {
   const { frontmatter } = data;
   const { title } = frontmatter;
+  const { contact_form_action } = config.params;
 
   return (
     <section className="section">
@@ -12,11 +13,8 @@ const Contact = ({ data }) => {
         <form
           className="contact-form"
           method="POST"
-          data-netlify="true" // Enable Netlify form handling
-          name="Contact Form" // Name for the form
+          action={contact_form_action}
         >
-          <input type="hidden" name="form-name" value="Contact Form" /> {/* Hidden input for form name */}
-          
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
@@ -54,9 +52,9 @@ const Contact = ({ data }) => {
             <label className="mb-2 block" htmlFor="message">
               Message
             </label>
-            <textarea className="form-textarea w-full" name="message" rows="7" required />
+            <textarea className="form-textarea w-full" rows="7" />
           </div>
-          <button type="submit" className="btn btn-outline-primary">Submit Now</button>
+          <button className="btn btn-outline-primary">Submit Now</button>
         </form>
       </div>
     </section>
