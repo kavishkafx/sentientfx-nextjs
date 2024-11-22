@@ -13,8 +13,11 @@ const Contact = ({ data }) => {
         <form
           className="contact-form"
           method="POST"
-          action={contact_form_action}
+          name="contact-form"
+          data-netlify="true" // Netlify form handling
+          action={contact_form_action} // Optional: specify a custom action if needed
         >
+          <input type="hidden" name="form-name" value="contact-form" />
           <div className="mb-6">
             <label className="mb-2 block" htmlFor="name">
               Name
@@ -52,7 +55,7 @@ const Contact = ({ data }) => {
             <label className="mb-2 block" htmlFor="message">
               Message
             </label>
-            <textarea className="form-textarea w-full" rows="7" />
+            <textarea className="form-textarea w-full" rows="7" name="message" required />
           </div>
           <button className="btn btn-outline-primary">Submit Now</button>
         </form>
