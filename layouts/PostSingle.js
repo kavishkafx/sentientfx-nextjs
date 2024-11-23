@@ -100,11 +100,13 @@ const PostSingle = ({ post, posts, authors, slug }) => {
         {/* Right Sidebar Ad */}
         <div
           className="ad-sidebar"
-          style={{ 
+          style={{
             display: "flex",
             flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
             gap: "1rem",
-            marginLeft: "2rem",
+            margin: "2rem auto",
             }}
         >
           <div
