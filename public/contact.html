@@ -1,25 +1,124 @@
-<main style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
-    <div style="background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 100%; max-width: 500px;">
-        <h1 style="font-size: 24px; margin-bottom: 10px;">Contact Us</h1>
-        <p style="font-size: 14px; margin-bottom: 20px;">If you have any questions, feel free to reach out using the form below.</p>
-
-        <!-- Contact Form -->
-        <form name="contact" method="POST" data-netlify="true">
-            <div style="margin-bottom: 15px;">
-                <label for="name" style="display: block; font-size: 14px; margin-bottom: 5px;">Your Name:</label>
-                <input type="text" name="name" id="name" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px;" />
+<main style="
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+">
+    <div style="
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        margin: 20px auto;
+    ">
+        <h1 style="
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        ">Contact Us</h1>
+        <form name="contact" method="POST" data-netlify="true" style="
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        ">
+            <div>
+                <label for="name" style="
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #333;
+                    display: block;
+                ">Your Name:</label>
+                <input type="text" name="name" id="name" required style="
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                " />
             </div>
-            <div style="margin-bottom: 15px;">
-                <label for="email" style="display: block; font-size: 14px; margin-bottom: 5px;">Your Email:</label>
-                <input type="email" name="email" id="email" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px;" />
+            <div>
+                <label for="email" style="
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #333;
+                    display: block;
+                ">Your Email:</label>
+                <input type="email" name="email" id="email" required style="
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                " />
             </div>
-            <div style="margin-bottom: 15px;">
-                <label for="message" style="display: block; font-size: 14px; margin-bottom: 5px;">Message:</label>
-                <textarea name="message" id="message" required style="width: 100%; padding: 8px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;"></textarea>
+            <div>
+                <label for="message" style="
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #333;
+                    display: block;
+                ">Message:</label>
+                <textarea name="message" id="message" required style="
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    resize: vertical;
+                    min-height: 150px;
+                    box-sizing: border-box;
+                "></textarea>
             </div>
-            <div style="display: flex; gap: 10px;">
-                <a href="/" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; justify-content: center;">Home</a>
-                <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">Send</button>
+            <div style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 10px;
+                flex-wrap: wrap;
+            ">
+                <a href="/" style="
+                    padding: 12px 24px;
+                    background-color: #000;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0.3s;
+                    min-width: 120px;
+                " 
+                onmouseover="this.style.backgroundColor='#333'" 
+                onmouseout="this.style.backgroundColor='#000'">Home</a>
+                <button type="submit" style="
+                    padding: 12px 24px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    min-width: 120px;
+                " 
+                onmouseover="this.style.backgroundColor='#45a049'" 
+                onmouseout="this.style.backgroundColor='#4CAF50'">Send</button>
             </div>
         </form>
     </div>
