@@ -40,6 +40,23 @@ const PostSingle = ({ post, posts, authors, slug }) => {
                 `,
               }}
             ></div>
+            <div
+              className="ad-banner mb-8"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <script type="text/javascript">
+                      atOptions = {
+                          'key' : '1a2d7ddc0db57a2d2e03f5d0de59d02b',
+                          'format' : 'iframe',
+                          'height' : 600,
+                          'width' : 160,
+                          'params' : {}
+                      };
+                  </script>
+                  <script type="text/javascript" src="//dividedintegrationtransparent.com/1a2d7ddc0db57a2d2e03f5d0de59d02b/invoke.js"></script>
+                `,
+              }}
+            ></div>
           </div>
 
           {/* Main Content - Centered */}
@@ -101,6 +118,29 @@ const PostSingle = ({ post, posts, authors, slug }) => {
               <div className="content mb-16 text-left">
                 <MDXContent content={content} />
               </div>
+              {/* New Ad Banner Below Content */}
+              <div
+                className="ad-banner mb-8"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <script type="text/javascript">
+                        atOptions = {
+                            'key' : 'ed58a7a688c52c067f79ec960e2a9d0c',
+                            'format' : 'iframe',
+                            'height' : 60,
+                            'width' : 468,
+                            'params' : {}
+                        };
+                    </script>
+                    <script type="text/javascript" src="//dividedintegrationtransparent.com/ed58a7a688c52c067f79ec960e2a9d0c/invoke.js"></script>
+                  `,
+                }}
+              ></div>
               <div className="flex flex-wrap items-center justify-between">
                 <ul className="mb-4 mr-4 space-x-3">
                   {tags.map((tag, i) => (
@@ -146,10 +186,33 @@ const PostSingle = ({ post, posts, authors, slug }) => {
                 `,
               }}
             ></div>
+
+            <div
+              className="ad-banner mb-8"
+              style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center' 
+              }}
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <script type="text/javascript">
+                      atOptions = {
+                          'key' : '1a2d7ddc0db57a2d2e03f5d0de59d02b',
+                          'format' : 'iframe',
+                          'height' : 600,
+                          'width' : 160,
+                          'params' : {}
+                      };
+                  </script>
+                  <script type="text/javascript" src="//dividedintegrationtransparent.com/1a2d7ddc0db57a2d2e03f5d0de59d02b/invoke.js"></script>
+                `,
+              }}
+            ></div>
+            
           </div>
         </div>
       </section>
-
       {similarPosts && similarPosts.length > 0 && (
         <section className="section">
           <div className="container">
